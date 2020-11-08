@@ -2,7 +2,7 @@
 require_once 'database.php';
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 if ($conn) {
-    $querry = "SELECT * FROM movies";
+    $querry = "SELECT * FROM movies ORDER BY title ASC";
     $result = mysqli_query($conn, $querry);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
     foreach ($movies as $movie) : ?>

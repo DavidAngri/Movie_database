@@ -22,7 +22,7 @@ nav {
 }
 ul {
   display: flex;
-  margin-right: 170px;
+  margin-right: 130px;
   text-decoration: none;
 }
 li {
@@ -55,7 +55,7 @@ li {
   padding: 20px;
 }
 #searchbar {
-  width: 250px;
+  width: 200px;
   margin-right: 10px;
   font-family: "Candal", sans-serif;
 }

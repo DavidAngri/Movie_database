@@ -11,7 +11,7 @@ require_once 'menu.php';
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <form action="" method="POST">
-    <button></button>
+
     <button id=sortasc name="sortasc">Sort movies ASC</button>
     <button id=sortdes name="sortdes">Sort movies DESC</button><br>
 
