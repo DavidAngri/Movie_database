@@ -14,7 +14,7 @@ if ($conn) {
             <p>Year of Release: <?= $movie['release_year'] ?></p>
             <p>Synopsis : <?= $movie['synopsis'] ?></p>
             <a href="#">Edit film</a>
-            <p>Add to my play list<button><i class="fas fa-bookmark"></i></button></p>
+
 
             <hr>
         </div>
