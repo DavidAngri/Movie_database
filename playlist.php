@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php
 
 $firstname = '';
@@ -29,12 +30,15 @@ if (isset($_POST['submitBtn']))
 
 ?>
 
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<<<<<<< Updated upstream
     <style>
         .errors{
             color: red;
@@ -48,5 +52,10 @@ if (isset($_POST['submitBtn']))
             <input type="submit" name value="ADD PLAYLIST">
         </form>
     </main>
+=======
+</head>
+<body>
+    
+>>>>>>> Stashed changes
 </body>
 </html>
