@@ -7,9 +7,6 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
 if($conn)
 {
-    echo '<h2 style="font-weight: 900">  Welcome to the movie Website </h2>';
-    echo '<hr>';
-
 
     if(isset($_GET['id']))
     {

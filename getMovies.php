@@ -9,7 +9,7 @@ $search = trim($_POST['keyMovie']);
 if (!empty($_POST) OR isset($search))
 {
     if(empty($search))
-        $query = "SELECT * FROM movies ORDER BY movie_id DESc LIMIT 4";
+        $query = "SELECT * FROM movies ORDER BY movie_id DESC LIMIT 4";
     else
         $query = "SELECT * FROM movies WHERE title LIKE '%$search%'";            
 

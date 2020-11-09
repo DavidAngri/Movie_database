@@ -43,15 +43,7 @@
 <body>
     <main>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Aperiam laboriosam animi, laudantium facere corporis voluptatum accusantium culpa 
-            voluptatibus maxime sequi reiciendis suscipit similique fuga adipisci ab. 
-            Quae sunt praesentium ipsa.
-            
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Aperiam laboriosam animi, laudantium facere corporis voluptatum accusantium culpa 
-            voluptatibus maxime sequi reiciendis suscipit similique fuga adipisci ab. 
-            Quae sunt praesentium ipsa.
+            Welcome to our movie website. Here, you can find the details about the movies like the actor, actress, director and released year.
         </p>
 
         <form action="" method="post">
@@ -87,6 +79,30 @@
               .fail(function (resultCat) {
             });
 
+            $('a').click(function (e)
+            {
+                console.log('Hello');
+                $.ajax({
+                    url: "getMovies.php",
+                    method: "post",
+                    data: {
+                            keyMovie: $(this).val()
+                        },
+                    dataType: 'json'
+                    })
+                    .done(function (result) {
+                        $.each(result, function(key, movies) {
+                            $('#movies').append('<div><img src = images/poster/' + 
+                                                     movies.poster + ' height = 250px, width = 200px><br><a href="getMovies.php?id='+ movies.movie_id + '">' + 
+                                                    //    movies.poster + ' height = 250px, width = 200px><br><a href="">' + 
+                                                    movies.title + '</a></p></div>');
+                                            
+                        });
+                    })
+                    .fail(function (result) {
+                    });
+            });
+
             // To display the movies in the descending order
             $.ajax({
                 url: "getMovies.php",
@@ -99,8 +115,9 @@
                 .done(function (result) {
                     $.each(result, function(key, movies) {
                         $('#movies').append('<div><img src = images/poster/' + 
-                                                movies.poster + ' height = 250px, width = 200px><br><a href="">' + 
-                                                movies.title +'</a></div>');
+                                                movies.poster + ' height = 250px, width = 200px><br><a href="movie-details.php?id='+ movies.movie_id + '">' + 
+                                                movies.title + '</a></p></div>');
+                                        
                     });
                 })
                 .fail(function (result) {
@@ -120,12 +137,9 @@
                 })
                 .done(function (result) {
                     $.each(result, function(key, movies) {
-                        /*$('#movies').append('<div><img src = images/poster/' + 
-                                                movies.poster + ' height = 250px, width = 400px><br><a href="">' + 
-                                                movies.title +'</a></div>');*/
                         $('#movies').append('<div><img src = images/poster/' + 
-                                                movies.poster + ' height = 250px, width = 200px><br><a href="movie-details.php?id="' + "movies.movie_id" + '>' + 
-                                                movies.title + '</a><p>' + movies.movie_id + '</p></div>');
+                                                movies.poster + ' height = 250px, width = 200px><br><a href="movie-details.php?id='+ movies.movie_id + '">' + 
+                                                movies.title + '</a></p></div>');
                     });
                 })
                 .fail(function (result) {
