@@ -9,7 +9,8 @@ if ($conn) {
         <div id="card">
             <img src="images/poster/<?= $movie['poster'] ?>" alt="">
             <p>Movie id : <?= $movie['movie_id'] ?></p>
-            <p> Movie Title : <?= $movie['title'] ?></p>
+            <p> Movie Title : <a href="movie-details.php?id=" $movie[movie_id]?><?= $movie['title'] ?></a>
+            </p>
             <p>Year of Release: <?= $movie['release_year'] ?></p>
             <p>Synopsis : <?= $movie['synopsis'] ?></p>
             <a href="#">Edit film</a>
