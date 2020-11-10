@@ -26,7 +26,7 @@ if (isset($_POST['submitBtn'])) {
                 session_start();
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['last_activity'] = strtotime('now');
-                header('location:home.php');
+                header('location:menu.php');
             } else {
                 $errors['password'] = 'Incorrect Password';
             }
@@ -148,13 +148,13 @@ if (isset($_POST['submitBtn'])) {
 
             <label for="password">Password</label><br>
             <div>
-                <input type="passord" name="password" id="password" placeholder="Please enter your password" value="<?php echo $password ?>"><br>
+                <input type="password" name="password" id="password" placeholder="Please enter your password" value="<?php echo $password ?>"><br>
                 <?php if (isset($errors['password'])) echo '<span>' . $errors['password'] . '</span>'; ?><br>
             </div>
             <input type="submit" name="submitBtn" id="submitBtn" value="Sign-in">
         </form>
         <article>
-            <p>New to our Website ? <a href="#">Create your account</a></p>
+            <p>New to our Website ? <a href="http://192.168.64.2/Movie_database/Registration.php">Create your account</a></p>
 
         </article>
 
