@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,9 +81,9 @@
               .fail(function (resultCat) {
             });
 
-            $('a').click(function (e)
+/*            $('a').click(function (e)
             {
-                console.log('Hello');
+                debugger;
                 $.ajax({
                     url: "getMovies.php",
                     method: "post",
@@ -101,7 +103,7 @@
                     })
                     .fail(function (result) {
                     });
-            });
+            });*/
 
             // To display the movies in the descending order
             $.ajax({

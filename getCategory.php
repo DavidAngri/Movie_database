@@ -18,6 +18,7 @@ if (!empty($_POST))
     $categories = mysqli_fetch_all($resultsCat, MYSQLI_ASSOC);
 
     foreach ($categories as $category) {
+        //echo "<a href='getMovies.php?id=$category[category_id]' name = catMovies id=catMovies'> $category[name] ($category[movieCount])</a>";
         echo "<a href=''> $category[name] ($category[movieCount])</a>";
     }
 }
