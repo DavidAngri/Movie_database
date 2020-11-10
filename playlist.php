@@ -1,50 +1,43 @@
-<<<<<<< Updated upstream
 <?php
 
 $firstname = '';
-if (isset($_POST['submitBtn'])) 
-{
+if (isset($_POST['submitBtn'])) {
     if (empty($_POST['playlistName']))
         echo "<p class='errors'> Name is Mandatory!!! </p>";
-    else
-    {
+    else {
         require_once 'database.php';
 
         $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-  
+
         $query = "INSERT INTO playlist(name)
-        VALUES('" . $_POST['title'] . "', '" . $_POST['views']  ."', " . $_POST['directors'] . ")";
-    
+        VALUES('" . $_POST['title'] . "', '" . $_POST['views']  . "', " . $_POST['directors'] . ")";
+
         // execute the query
         $result = mysqli_query($conn, $query);
-    
+
         if ($result)
-          echo 'Playlist successfully added!';
+            echo 'Playlist successfully added!';
         else
-          echo 'Error adding playlist into DB';
+            echo 'Error adding playlist into DB';
     }
-
-
-
-  }
+}
 
 ?>
 
-=======
->>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<<<<<<< Updated upstream
     <style>
-        .errors{
+        .errors {
             color: red;
         }
     </style>
 </head>
+
 <body>
     <main>
         <form action="" method="post">
@@ -52,10 +45,11 @@ if (isset($_POST['submitBtn']))
             <input type="submit" name value="ADD PLAYLIST">
         </form>
     </main>
-=======
-</head>
-<body>
-    
->>>>>>> Stashed changes
-</body>
+
+    </head>
+
+    <body>
+
+    </body>
+
 </html>
