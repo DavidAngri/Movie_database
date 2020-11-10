@@ -20,8 +20,8 @@
         <ul>
             <li><a id="homenav" href="home.php">Home</a></li>
             <li><a id="homenav" href="catalogue.php">Movie Catalogue</a></li>
-            <li><a id="homenav" href="#"> Add Categories</a></li>
-            <li><a id="homenav" href="#">Add a movie</a></li>
+            <li><a id="homenav" href="add-category.php"> Add Categories</a></li>
+            <li><a id="homenav" href="Adding-movies.php">Add a movie</a></li>
 
         </ul>
         <form action="" method="POST">

@@ -203,7 +203,7 @@
             <!-- Submit Button -->
             <input id="submitBtn" type="submit" name="submitBtn" value="Register"><br>
             <article>
-                Already have an account? <a href="http://192.168.64.2/Movie_database/Log-in-page.php">Login</a>
+                Already have an account? <a href="Log-in-page.php">Login</a>
             </article>
         </form>
     </section>

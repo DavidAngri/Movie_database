@@ -28,7 +28,7 @@ if (isset($_POST['submitBtn'])) {
 if (isset($_POST['submitBtn2'])) {
     $poster = htmlspecialchars(trim($_POST['poster']));
     $directorname = htmlspecialchars(trim($_POST['directorname']));
-    $nationality=$_POST['nationalities'];
+    $nationality = $_POST['nationalities'];
 
     if (empty($directorname)) {
         $errors['director'] = 'Please enter on director name';
@@ -74,6 +74,9 @@ if (isset($_POST['submitBtn2'])) {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
+<header>
+    <?php require_once 'menu.php' ?>
+</header>
 
 <body>
     <form action="" method="POST">
