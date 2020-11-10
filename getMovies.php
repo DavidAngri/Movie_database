@@ -9,17 +9,7 @@ $search = trim($_POST['keyMovie']);
 if (!empty($_POST) OR isset($search))
 {
     if(empty($search))
-        $query = "SELECT * FROM movies ORDER BY movie_id DESC LIMIT 4";  
-    /*elseif(isset($_GET['id']))
-    {
-        $id =$_GET['id'];
-        {
-            $query = "SELECT * FROM movies m 
-                        INNER JOIN movie_category mc ON mc.movie_id = m.movie_id 
-                        INNER JOIN categories c ON c.category_id =mc.category_id 
-                        WHERE c.category_id = $id ";
-        } 
-    } */              
+        $query = "SELECT * FROM movies ORDER BY movie_id DESC LIMIT 4";              
     else
         $query = "SELECT * FROM movies WHERE title LIKE '%$search%'";            
 

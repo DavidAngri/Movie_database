@@ -15,11 +15,10 @@
         input{
             height: 100px;
             width: 100%;
+            font-size: 5rem;
+            text-align: center;
         }
 
-        input::-webkit-input-placeholder {
-            font-size: 50px;
-        }
         #categories{
             display: flex;
             flex-wrap: wrap;
@@ -81,29 +80,26 @@
               .fail(function (resultCat) {
             });
 
-/*            $('a').click(function (e)
-            {
-                debugger;
-                $.ajax({
-                    url: "getMovies.php",
-                    method: "post",
-                    data: {
-                            keyMovie: $(this).val()
-                        },
-                    dataType: 'json'
-                    })
-                    .done(function (result) {
-                        $.each(result, function(key, movies) {
-                            $('#movies').append('<div><img src = images/poster/' + 
-                                                     movies.poster + ' height = 250px, width = 200px><br><a href="getMovies.php?id='+ movies.movie_id + '">' + 
-                                                    //    movies.poster + ' height = 250px, width = 200px><br><a href="">' + 
-                                                    movies.title + '</a></p></div>');
-                                            
-                        });
-                    })
-                    .fail(function (result) {
+
+            $.ajax({
+                url: "getMovies.php",
+                method: "post",
+                data: {
+                        keyMovie: $(this).val()
+                    },
+                dataType: 'json'
+                })
+                .done(function (result) {
+                    $.each(result, function(key, movies) {
+                        $('#movies').append('<div><img src = images/poster/' + 
+                                                movies.poster + ' height = 250px, width = 200px><br><a href="movie-details.php?id='+ movies.movie_id + '">' + 
+                                                movies.title + '</a></p></div>');
+                                        
                     });
-            });*/
+                })
+                .fail(function (result) {
+                });
+
 
             // To display the movies in the descending order
             $.ajax({

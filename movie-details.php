@@ -37,22 +37,22 @@ if ($conn) {
 
         echo "<section>";
         echo "<div class='picture'>";
-        echo "<img src='images/poster/$db_record[poster]' height = 250px, width = 200px> <br>";
-        echo "<b>Released in : </b>$db_record[release_year]<br>";
+        echo "<img src='images/poster/$db_record[poster]' height = 400px, width = 300px> <br>";
+        echo "<p><b>Released in : </b>$db_record[release_year]<p><br>";
         echo "</div>";
         echo "<div class='details'>";
-        echo "<a href=''>  $db_record[title]</a><br>";
+        echo "<h2><a href=''>  $db_record[title]</a></h2><br>";
         echo "<p>$db_record[synopsis]</p>";
         echo "<b>Categories : </b>";
         echo "<ul>";
-        while ($db_records1 = mysqli_fetch_assoc($results1)) {
-            echo "<li> $db_records1[name] </li>";
+        while ($db_records2 = mysqli_fetch_assoc($results2)) {
+            echo "<li> $db_records2[name] </li>";
         }
         echo "</ul>";
         echo "<b>Actor and Actress : </b>";
         echo "<ul>";
-        while ($db_records2 = mysqli_fetch_assoc($results2)) {
-            echo "<li> $db_records2[name] </li>";
+        while ($db_records1 = mysqli_fetch_assoc($results1)) {
+            echo "<li> $db_records1[name] </li>";
         }
         echo "</ul>";
 
