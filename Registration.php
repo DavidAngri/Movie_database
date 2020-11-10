@@ -70,8 +70,7 @@
             
             $query = "SELECT * FROM users WHERE email = '$email'";
 
-            echo $query;
-            $result = mysqli_query($query, $conn);
+            $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result) == 0)
             {
