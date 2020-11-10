@@ -114,7 +114,7 @@
             <?php if (isset($errors['confirm_password'])) echo $errors['confirm_password'] ?><br>
             <!-- Submit Button -->
             <input type="submit" name="submitBtn" value="Register"><br>
-            Already have an account? <a href="Log-in-page.php">Login</a>
+            Already have an account? <a href="index.php">Login</a>
         </div>
     </form>
 </body>
