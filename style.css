@@ -22,7 +22,7 @@ nav {
 }
 ul {
   display: flex;
-  margin-right: 130px;
+
   text-decoration: none;
 }
 li {
@@ -54,18 +54,17 @@ li {
   transition-duration: 0.4s;
   padding: 20px;
 }
-#searchbar {
-  width: 200px;
-  margin-right: 10px;
-  font-family: "Candal", sans-serif;
-}
-form {
-  margin-right: 20px;
-}
-#submitBtn {
+
+#logoutBtn {
   background-color: white;
   border: none;
-  width: 50px;
+  width: 70px;
   border-radius: 10px;
   font-family: "Candal", sans-serif;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+#logoutBtn:hover {
+  color: white;
+  background-color: red;
 }
