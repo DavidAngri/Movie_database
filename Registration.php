@@ -47,36 +47,40 @@
 
         if (empty($firstname))
             $errors['firstname'] = 'First Name is Mandatory!!!';
-        elseif (empty($lastname))
+        if (empty($lastname))
             $errors['lastname'] = 'Last Name is Mandatory!!!';
-        elseif (empty($nickname))
+        if (empty($nickname))
             $errors['nickname'] = 'Name is Mandatory!!!';
-        elseif (empty($email))
+        if (empty($email))
             $errors['email'] = 'Email is Mandatory!!!';
-        elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL))
             $errors['email'] = 'Enter a Valid Email';
-        elseif (empty($password))
+        if (empty($password))
             $errors['password'] = 'Password is Mandatory!!!';
-        elseif (strlen($password) < 8)
+        if (strlen($password) < 8)
             $errors['password'] = 'Passsword must contain more than 8 Characters';
-        elseif (!$password == $confirm_password)
+        if (!$password == $confirm_password)
             $errors['confirm_password'] = 'Password and Confirm Password must Match';
-        elseif (count($errors == 0))
+        if (count($errors) == 0)
         {
   
             require_once 'database.php';
 
-            $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+            $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+            
+            $query = "SELECT * FROM users WHERE email = '$email'";
 
-            $query = "SELECT * FROM users WHERE email = '$email' ";
+            echo $query;
             $result = mysqli_query($query, $conn);
 
             if(mysqli_num_rows($result) == 0)
             {
-                $query_insert = "INSERT INTO users(firstname, lastname, nickname, email, password) 
-                VALUES ('$firstname', '$lastname', '$email', '$hashedPassword')";
 
-                $result_insert = mysqli_query($conn, $query);
+                $query_insert = "INSERT INTO users(firstname, lastname, nickname, email, password) 
+                VALUES ('$firstname', '$lastname', '$nickname', '$email', '$hashedPassword')";
+
+                $result_insert = mysqli_query($conn, $query_insert);
+                echo '<h2>Welcome ' . $nickname . '</h2>';
             }
             else
                 echo "User with the email $email already Exists....";
