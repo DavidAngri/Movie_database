@@ -72,6 +72,11 @@ if ($_SESSION['Status'] == 0) {
 </head>
 
 <body>
+    <header>
+        <?php
+        require_once 'menu.php'
+        ?>
+    </header>
     <form action="" method="POST">
         <label for="name">Name of the movie</label><br>
         <input type="text" name="title" id="title" value="<?php echo $title ?>"> <br>
