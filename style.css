@@ -48,7 +48,9 @@ li {
   font-size: 1rem;
   margin-left: 10px;
 }
-#homenav {
+#homenav,
+#addcat,
+#addmov {
   color: white;
   font-family: "Candal", sans-serif;
   transition-duration: 0.4s;
@@ -67,4 +69,7 @@ li {
 #logoutBtn:hover {
   color: white;
   background-color: red;
+}
+.user {
+  display: none;
 }

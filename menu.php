@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_POST['submitBtn'])) {
+        session_unset();
+        session_destroy();
+        header('location:index.php');
+    }
+    ?>
     <nav>
         <div id="flexy">
             <img src="images/Logo/logo2.png" alt="" id="logo">
@@ -20,8 +27,8 @@
         <ul>
             <li><a id="homenav" href="home.php">Home</a></li>
             <li><a id="homenav" href="Catalogue.php">Movie Catalogue</a></li>
-            <li><a id="homenav" href="add-category.php">Add a category</a></li>
-            <li><a id="homenav" href="Adding-movies.php">Add a movie</a></li>
+            <li><a id="homenav" <?php if ($_SESSION['Status'] == 0) echo "class='user'" ?> href="add-category.php">Add a category</a></li>
+            <li><a id="homenav" <?php if ($_SESSION['Status'] == 0) echo "class='user'" ?> href="Adding-movies.php">Add a movie</a></li>
         </ul>
         <form action="" method="POST">
             <input type="submit" name="submitBtn" id="submitBtn" value="Log Out">

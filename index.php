@@ -24,9 +24,10 @@ if (isset($_POST['submitBtn'])) {
             $user = mysqli_fetch_assoc($result);
             if (password_verify($password, $user['password'])) {
                 session_start();
-                $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['Status'] = $user['Status'];
                 $_SESSION['last_activity'] = strtotime('now');
-                header('location:menu.php');
+                header('location:home.php');
             } else {
                 $errors['password'] = 'Incorrect Password';
             }

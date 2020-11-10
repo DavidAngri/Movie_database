@@ -1,65 +1,65 @@
 <?php
-$errors = array();
-$category = "";
-$directors = "";
+session_start();
+if ($_SESSION['Status'] == 0) {
+    header('location:index.php');
+} else {
+    $errors = array();
+    $category = "";
+    $directors = "";
 
-if (isset($_POST['submitBtn'])) {
-    $category = htmlspecialchars(trim($_POST['category']));
-    if (empty($category)) {
-        $errors['category'] = 'Please enter on category';
+    if (isset($_POST['submitBtn'])) {
+        $category = htmlspecialchars(trim($_POST['category']));
+        if (empty($category)) {
+            $errors['category'] = 'Please enter on category';
+        }
+        if (strlen($category) < 4) {
+            $errors['category'] = 'Please enter at least 4 characters';
+        }
+        if (count($errors) == 0) {
+            require_once 'database.php';
+            $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+            $query = "SELECT * FROM categories WHERE name='$category'";
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result) == 0) {
+                $query2 = "INSERT INTO categories (name) VALUES ('$category')";
+                $result2 = mysqli_query($conn, $query2);
+                echo 'category successfully added';
+            } else
+                $errors['category'] = 'Category already in the database';
+        }
     }
-    if (strlen($category) < 4) {
-        $errors['category'] = 'Please enter at least 4 characters';
-    }
-    if (count($errors) == 0) {
-        require_once 'database.php';
-        $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-        $query = "SELECT * FROM categories WHERE name='$category'";
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) == 0) {
-            $query2 = "INSERT INTO categories (name) VALUES ('$category')";
-            $result2 = mysqli_query($conn, $query2);
-            echo 'category successfully added';
-        } else
-            $errors['category'] = 'Category already in the database';
+
+    if (isset($_POST['submitBtn2'])) {
+        $poster = htmlspecialchars(trim($_POST['poster']));
+        $directorname = htmlspecialchars(trim($_POST['directorname']));
+        $nationality = $_POST['nationalities'];
+
+        if (empty($directorname)) {
+            $errors['director'] = 'Please enter on director name';
+        }
+        if (strlen($directorname) < 4) {
+            $errors['director'] = 'Please enter at least 4 characters';
+        }
+        if (empty($poster)) {
+            $errors['director'] = 'Please enter on director name';
+        }
+        if (strlen($poster) < 4) {
+            $errors['director'] = 'Please enter at least 4 characters';
+        }
+        if (count($errors) == 0) {
+            require_once 'database.php';
+            $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+            $query = "SELECT * FROM directors WHERE name='$directorname'";
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result) == 0) {
+                $query2 = "INSERT INTO directors (name,nationality,picture) VALUES ('$directorname','$nationality','$poster')";
+                $result2 = mysqli_query($conn, $query2);
+                echo 'Director successfully added';
+            } else
+                $errors['Director'] = 'Director already in the database';
+        }
     }
 }
-
-if (isset($_POST['submitBtn2'])) {
-    $poster = htmlspecialchars(trim($_POST['poster']));
-    $directorname = htmlspecialchars(trim($_POST['directorname']));
-    $nationality = $_POST['nationalities'];
-
-    if (empty($directorname)) {
-        $errors['director'] = 'Please enter on director name';
-    }
-    if (strlen($directorname) < 4) {
-        $errors['director'] = 'Please enter at least 4 characters';
-    }
-    if (empty($poster)) {
-        $errors['director'] = 'Please enter on director name';
-    }
-    if (strlen($poster) < 4) {
-        $errors['director'] = 'Please enter at least 4 characters';
-    }
-    if (count($errors) == 0) {
-        require_once 'database.php';
-        $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-        $query = "SELECT * FROM directors WHERE name='$directorname'";
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) == 0) {
-            $query2 = "INSERT INTO directors (name,nationality,picture) VALUES ('$directorname','$nationality','$poster')";
-            $result2 = mysqli_query($conn, $query2);
-            echo 'Director successfully added';
-        } else
-            $errors['Director'] = 'Director already in the database';
-    }
-}
-
-
-
-
-
 
 ?>
 

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +56,8 @@
     <main>
         <p>
             Welcome to our movie website. Here, you can find the details about the movies like the actor, actress, director and released year.
+            You can our filter to look for many information about your favourite movies while enjoying a nice cup of coffe (but take care, your keyboard doesn't like coffee)
+
         </p>
 
         <form action="" method="post">

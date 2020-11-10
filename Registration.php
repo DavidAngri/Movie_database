@@ -149,11 +149,16 @@
 
             if (mysqli_num_rows($result) == 0) {
 
-                $query_insert = "INSERT INTO users(firstname, lastname, nickname, email, password) 
-                VALUES ('$firstname', '$lastname', '$nickname', '$email', '$hashedPassword')";
+                $query_insert = "INSERT INTO users(firstname, lastname, nickname, email, password, Status) 
+                VALUES ('$firstname', '$lastname', '$nickname', '$email', '$hashedPassword', 0)";
 
                 $result_insert = mysqli_query($conn, $query_insert);
                 echo '<h2>Welcome ' . $nickname . '</h2>';
+                session_start();
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['Status'] = 0;
+                $_SESSION['last_activity'] = strtotime('now');
+                header('location:home.php');
             } else
                 echo "User with the email $email already Exists....";
         }
@@ -203,7 +208,7 @@
             <!-- Submit Button -->
             <input id="submitBtn" type="submit" name="submitBtn" value="Register"><br>
             <article>
-                Already have an account? <a href="Log-in-page.php">Login</a>
+                Already have an account? <a href="index.php">Login</a>
             </article>
         </form>
     </section>
