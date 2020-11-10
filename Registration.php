@@ -7,10 +7,11 @@
     <title>Registration Form</title>
 
     <style>
-        .errors{
+        .errors {
             color: red;
         }
-        form{
+
+        form {
             height: 500px;
             width: 500px;
             border: 2px solid blue;
@@ -28,7 +29,7 @@
     $email = '';
     $password = '';
     $confirm_password = '';
-    
+
     $errors = array();
 
     if (isset($_POST['submitBtn'])) {
@@ -61,30 +62,25 @@
             $errors['password'] = 'Passsword must contain more than 8 Characters';
         if (!$password == $confirm_password)
             $errors['confirm_password'] = 'Password and Confirm Password must Match';
-        if (count($errors) == 0)
-        {
-  
+        if (count($errors) == 0) {
+
             require_once 'database.php';
 
             $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-            
+
             $query = "SELECT * FROM users WHERE email = '$email'";
 
             $result = mysqli_query($conn, $query);
 
-            if(mysqli_num_rows($result) == 0)
-            {
+            if (mysqli_num_rows($result) == 0) {
 
                 $query_insert = "INSERT INTO users(firstname, lastname, nickname, email, password) 
                 VALUES ('$firstname', '$lastname', '$nickname', '$email', '$hashedPassword')";
 
                 $result_insert = mysqli_query($conn, $query_insert);
                 echo '<h2>Welcome ' . $nickname . '</h2>';
-            }
-            else
+            } else
                 echo "User with the email $email already Exists....";
-
-            
         }
     }
 
@@ -95,30 +91,30 @@
             <!-- first Name -->
             <label for="firstname">First Name</label><br>
             <input type="text" name="firstname" placeholder="Henri" value='<?= $firstname ?>'>
-            <?php if(isset($errors['firstname'])) echo $errors['firstname']?><br>
+            <?php if (isset($errors['firstname'])) echo $errors['firstname'] ?><br>
             <!-- last Name -->
             <label for="lastname">Last Name</label><br>
             <input type="text" name="lastname" placeholder="Beck" value='<?= $lastname ?>'>
-            <?php if(isset($errors['lastname'])) echo $errors['lastname']?><br>
+            <?php if (isset($errors['lastname'])) echo $errors['lastname'] ?><br>
             <!-- Nick Name -->
             <label for="nickname">Nick Name</label><br>
             <input type="text" name="nickname" placeholder="Alias Name" value='<?= $nickname ?>'>
-            <?php if(isset($errors['nickname'])) echo $errors['nickname']?><br>
+            <?php if (isset($errors['nickname'])) echo $errors['nickname'] ?><br>
             <!-- Email -->
             <label for="email">Email</label><br>
             <input type="text" name="email" placeholder="henri.beck@gmail.com" value='<?= $email ?>'>
-            <?php if(isset($errors['email'])) echo $errors['email']?><br>
+            <?php if (isset($errors['email'])) echo $errors['email'] ?><br>
             <!-- Password -->
             <label for="password">Password</label><br>
             <input type="password" name="password" placeholder="Enter your password" value='<?= $password ?>'>
-            <?php if(isset($errors['password'])) echo $errors['password']?><br>
+            <?php if (isset($errors['password'])) echo $errors['password'] ?><br>
             <!-- Confirm Password -->
             <label for="confirm_password">Confirm Password</label><br>
             <input type="password" name="confirm_password" placeholder="Confirm your password" value='<?= $confirm_password ?>'>
-            <?php if(isset($errors['confirm_password'])) echo $errors['confirm_password']?><br>
+            <?php if (isset($errors['confirm_password'])) echo $errors['confirm_password'] ?><br>
             <!-- Submit Button -->
             <input type="submit" name="submitBtn" value="Register"><br>
-            Already have an account? <a href="">Login</a>
+            Already have an account? <a href="Log-in-page.php">Login</a>
         </div>
     </form>
 </body>
