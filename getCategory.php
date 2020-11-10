@@ -19,6 +19,6 @@ if (!empty($_POST))
 
     foreach ($categories as $category) {
         echo "<a href='categoryMovies.php?id=$category[category_id]' name = catMovies id=catMovies'> $category[name] ($category[movieCount])</a>";
-        //echo "<a href=''> $category[name] ($category[movieCount])</a>";
+        // echo "<a href=''> $category[name] ($category[movieCount])</a>";
     }
 }

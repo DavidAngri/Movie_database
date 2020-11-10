@@ -81,26 +81,6 @@
             });
 
 
-            $.ajax({
-                url: "getMovies.php",
-                method: "post",
-                data: {
-                        keyMovie: $(this).val()
-                    },
-                dataType: 'json'
-                })
-                .done(function (result) {
-                    $.each(result, function(key, movies) {
-                        $('#movies').append('<div><img src = images/poster/' + 
-                                                movies.poster + ' height = 250px, width = 200px><br><a href="movie-details.php?id='+ movies.movie_id + '">' + 
-                                                movies.title + '</a></p></div>');
-                                        
-                    });
-                })
-                .fail(function (result) {
-                });
-
-
             // To display the movies in the descending order
             $.ajax({
                 url: "getMovies.php",
