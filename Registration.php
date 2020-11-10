@@ -161,7 +161,7 @@
 
     ?>
     <section>
-        <h1>Registration</h1>
+        <h1>Registration to the website</h1>
         <form action="" method="post">
 
             <!-- first Name -->
