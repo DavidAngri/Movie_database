@@ -19,13 +19,13 @@
         </div>
         <ul>
             <li><a id="homenav" href="home.php">Home</a></li>
-            <li><a id="homenav" href="catalogue.php">Movie Catalogue</a></li>
-            <li><a id="homenav" href="add-category.php"> Add Categories</a></li>
+            <li><a id="homenav" href="Catalogue.php">Movie Catalogue</a></li>
+            <li><a id="homenav" href="add-category.php">Add a category</a></li>
             <li><a id="homenav" href="Adding-movies.php">Add a movie</a></li>
-
         </ul>
         <form action="" method="POST">
-            <input type="submit" name="logoutBtn" id="logoutBtn" value="Log Out"></form>
+            <input type="submit" name="submitBtn" id="submitBtn" value="Log Out">
+        </form>
     </nav>
 
 
