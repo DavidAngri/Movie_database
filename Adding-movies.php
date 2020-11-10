@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $releasedYear = htmlspecialchars(trim($_POST['releasedYear']));
     $synopsis = htmlspecialchars(trim($_POST['synopsis']));
     $poster = htmlspecialchars(trim($_POST['poster']));
-    $direcor_id = 3;
+    $director_id = $_POST['directors'] + 0;
     // errors to be displayed  in if statement
     if (empty($title)) {
         $errors['title'] = 'Title name is mandatory';
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) == 0) {
-            $query2 = "INSERT INTO movies (title,release_year,synopsis,poster,director_id) VALUES ('$title',$releasedYear,'$synopsis','$poster',$direcor_id)";
+            $query2 = "INSERT INTO movies (title,release_year,synopsis,poster,director_id) VALUES ('$title',$releasedYear,'$synopsis','$poster',$director_id)";
             $result2 = mysqli_query($conn, $query2);
             echo 'movie successfully added';
         } else
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
             <option name="all" id="all" value="0">Select a category</option>
         </select><br>
         <select name="directors" id="directors">
-            <option name="all" id="all" value="0">Select a director</option>
+            <option name="all" id="all" name="dir">Select a director</option>
         </select><br>
 
         <input type="submit" name="submit" id="submit">
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
                     let directors = result;
                     console.log(directors);
                     $.each(directors, function(key, director) {
-                        $('#directors').append('<option value="' + director.id + '">' + director.name + '</option>');
+                        $('#directors').append('<option value="' + director.director_id + '" name="dir">' + director.name + '</option>');
                     });
                 })
                 .fail(function(result) {
