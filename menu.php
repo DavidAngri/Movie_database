@@ -18,14 +18,13 @@
             <h1 id="Project">Project</h1>
         </div>
         <ul>
-            <li><a id="homenav" href="#">Home</a></li>
-            <li><a id="homenav" href="#">Categories</a></li>
+            <li><a id="homenav" href="home.php">Home</a></li>
+            <li><a id="homenav" href="catalogue.php">Movie Catalogue</a></li>
+            <li><a id="homenav" href="#">Add a category</a></li>
             <li><a id="homenav" href="#">Add a movie</a></li>
-            <li><a id="homenav" href="#">Movie Catalogue</a></li>
         </ul>
         <form action="" method="POST">
-            <input type="search" name="searchmovie" id="searchbar" placeholder="Search for a movie">
-            <input type="submit" name="submitBtn" id="submitBtn" value="Seach">
+            <input type="submit" name="submitBtn" id="submitBtn" value="Log Out">
         </form>
     </nav>
 
