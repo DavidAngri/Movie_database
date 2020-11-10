@@ -154,7 +154,7 @@ if (isset($_POST['submitBtn'])) {
             <input type="submit" name="submitBtn" id="submitBtn" value="Sign-in">
         </form>
         <article>
-            <p>New to our Website ? <a href="#">Create your account</a></p>
+            <p>New to our Website ? <a href="Registration.php">Create your account</a></p>
 
         </article>
 
