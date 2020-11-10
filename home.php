@@ -44,6 +44,18 @@ session_start();
         #movies img {
             border: 3px solid red;
         }
+
+        p {
+            font-family: "Candal", sans-serif;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        body {
+            background-size: cover;
+            background-image: linear-gradient(to top, rgba(200, 200, 200, 0.839), rgba(200, 200, 200, 0.839)), url('images/background.jpg');
+        }
     </style>
 </head>
 

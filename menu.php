@@ -22,7 +22,7 @@
     <nav>
         <div id="flexy">
             <img src="images/Logo/logo2.png" alt="" id="logo">
-            <h1 id="Project">Project</h1>
+            <h1 id="Project">Cinemestro</h1>
         </div>
         <ul>
             <li><a id="homenav" href="home.php">Home</a></li>
