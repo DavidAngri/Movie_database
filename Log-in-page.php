@@ -48,8 +48,89 @@ if (isset($_POST['submitBtn'])) {
     <title>Document</title>
 </head>
 <style>
-    form {
-        align-items: center;
+    section {
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 200px;
+        width: 400px;
+        height: 350px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        text-rendering: optimizeLegibility;
+        font-weight: 400;
+    }
+
+    #enterEmail,
+    #password {
+        width: 350px;
+        height: 31px;
+        font-size: 13px;
+        margin-bottom: 10px;
+
+    }
+
+    label {
+        padding-left: 30px;
+        font-size: 13px;
+        line-height: 19px;
+        color: #111;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+    }
+
+    div {
+        padding-left: 30px;
+    }
+
+    article {
+        height: 44px;
+        padding-top: 5px;
+        background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+        z-index: 0;
+        zoom: 1;
+        text-align: center;
+    }
+
+    #submitBtn {
+        margin-left: 125px;
+        width: 150px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        height: 30px;
+        color: white;
+        background-color: black;
+        transition-duration: 0.4s;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+    }
+
+    #submitBtn:hover {
+        background-color: white;
+        color: black;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    body {
+
+        background-size: cover;
+        background-image: linear-gradient(to top, rgba(200, 200, 200, 0.839), rgba(200, 200, 200, 0.839)), url('images/background.jpg');
+    }
+
+    span {
+        color: red;
     }
 </style>
 
@@ -60,16 +141,22 @@ if (isset($_POST['submitBtn'])) {
         <h1>Sign-in</h1>
         <form action="" method="POST">
             <label for="email">Email</label><br>
-            <input type="text" name="email" id="enterEmail" placeholder="Plese enter your email" value="<?php echo $email ?>"><br>
-            <?php if (isset($errors['email'])) echo $errors['email']; ?><br>
-            <label for="password">Password</label><br>
-            <input type="passord" name="password" id="password" placeholder="Please enter your password" value="<?php echo $password ?>"><br>
-            <?php if (isset($errors['password'])) echo $errors['password']; ?><br>
-            <input type="submit" name="submitBtn" id="submitBtn">
-        </form>
-        <p>New to our Website ? </p>
-        <button><a href="#">Create your account</a></button>
+            <div>
+                <input type="text" name="email" id="enterEmail" placeholder="Please enter your email" value="<?php echo $email ?>"><br>
+                <?php if (isset($errors['email'])) echo '<span>' . $errors['email'] . '</span>'; ?><br>
+            </div>
 
+            <label for="password">Password</label><br>
+            <div>
+                <input type="passord" name="password" id="password" placeholder="Please enter your password" value="<?php echo $password ?>"><br>
+                <?php if (isset($errors['password'])) echo '<span>' . $errors['password'] . '</span>'; ?><br>
+            </div>
+            <input type="submit" name="submitBtn" id="submitBtn" value="Sign-in">
+        </form>
+        <article>
+            <p>New to our Website ? <a href="#">Create your account</a></p>
+
+        </article>
 
 
 
