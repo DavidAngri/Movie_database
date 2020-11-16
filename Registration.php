@@ -7,11 +7,9 @@
     <title>Registration Form</title>
 
     <style>
-        .errors {
-            color: red;
+        span {
+        color: red;
         }
-
-
 
         body {
 
@@ -25,7 +23,7 @@
             margin: auto;
             margin-top: 100px;
             width: 400px;
-            height: 600px;
+            height: 700px;
             font-family: Arial, Helvetica, sans-serif;
             background-color: white;
         }
@@ -166,44 +164,44 @@
 
     ?>
     <section>
-        <h1>Registration to the website</h1>
+        <h1>Registration</h1>
         <form action="" method="post">
 
             <!-- first Name -->
             <div>
                 <label for="firstname">First Name</label><br>
                 <input id="form" type="text" name="firstname" placeholder="Henri" value='<?= $firstname ?>'>
-                <?php if (isset($errors['firstname'])) echo $errors['firstname'] ?><br>
+                <?php if (isset($errors['firstname'])) echo '<span>' . $errors['firstname'] ?><br>
             </div>
             <!-- last Name -->
             <div>
                 <label for="lastname">Last Name</label><br>
                 <input id="form" type="text" name="lastname" placeholder="Beck" value='<?= $lastname ?>'>
-                <?php if (isset($errors['lastname'])) echo $errors['lastname'] ?><br>
+                <?php if (isset($errors['lastname'])) echo '<span>' . $errors['lastname'] . '</span>'?><br>
             </div>
             <!-- Nick Name -->
             <div>
                 <label for="nickname">Nick Name</label><br>
                 <input id="form" type="text" name="nickname" placeholder="Alias Name" value='<?= $nickname ?>'>
-                <?php if (isset($errors['nickname'])) echo $errors['nickname'] ?><br>
+                <?php if (isset($errors['nickname'])) echo '<span>' . $errors['nickname'] . '</span>'?><br>
             </div>
             <!-- Email -->
             <div>
                 <label for="email">Email</label><br>
                 <input id="form" type="text" name="email" placeholder="henri.beck@gmail.com" value='<?= $email ?>'>
-                <?php if (isset($errors['email'])) echo $errors['email'] ?><br>
+                <?php if (isset($errors['email'])) echo '<span>' . $errors['email'] . '</span>'?><br>
             </div>
             <!-- Password -->
             <div>
                 <label for="password">Password</label><br>
                 <input id="form" type="password" name="password" placeholder="Enter your password" value='<?= $password ?>'>
-                <?php if (isset($errors['password'])) echo $errors['password'] ?><br>
+                <?php if (isset($errors['password'])) echo '<span>' . $errors['password'] . '</span>'?><br>
             </div>
             <!-- Confirm Password -->
             <div>
                 <label for="confirm_password">Confirm Password</label><br>
                 <input id="form" type="password" name="confirm_password" placeholder="Confirm your password" value='<?= $confirm_password ?>'>
-                <?php if (isset($errors['confirm_password'])) echo $errors['confirm_password'] ?><br>
+                <?php if (isset($errors['confirm_password'])) echo '<span>' . $errors['confirm_password'] . '</span>'?><br>
             </div>
             <!-- Submit Button -->
             <input id="submitBtn" type="submit" name="submitBtn" value="Register"><br>

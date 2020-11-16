@@ -47,7 +47,7 @@ require_once 'menu.php';
             }).done(function(movie) {
                 $('#result').html(movie);
             }).fail(function(movie) {
-                console.log('AJA Error')
+                console.log('AJAX Error')
             })
         })
     })
@@ -63,7 +63,7 @@ require_once 'menu.php';
             }).done(function(movie) {
                 $('#result').html(movie);
             }).fail(function(movie) {
-                console.log('AJA Error')
+                console.log('AJAX Error')
             })
         })
     })
