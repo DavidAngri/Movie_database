@@ -14,12 +14,16 @@ $result = mysqli_query($conn, $query);
 $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 foreach ($movies as $movie) : ?>
     <div id="card">
-        <img src="images/poster/<?= $movie['poster'] ?>" alt="">
-        <p>Movie id : <?= $movie['movie_id'] ?></p>
-        <p> Movie Title : <?= $movie['title'] ?></p>
-        <p>Year of Release: <?= $movie['release_year'] ?></p>
-        <p>Synopsis : <?= $movie['synopsis'] ?></p>
-        <a href="#">Edit film</a>
+        <section class="picture">
+            <img src="images/poster/<?= $movie['poster'] ?>" alt="">
+            <p><b>Movie id : </b><?= $movie['movie_id'] ?></p><br>
+            <p><b>Movie Title : </b><?= $movie['title'] ?></p><br>
+        </section>
+        <section class="details">
+            <p><b>Year of Release: </b><?= $movie['release_year'] ?></p><br>
+            <p><b>Synopsis : </b><?= $movie['synopsis'] ?></p><br>
+            <a href="#">Edit film</a><br>
+        </section>            
         <p>Add to my play list<button><i class="fas fa-bookmark"></i></button></p>
 
 

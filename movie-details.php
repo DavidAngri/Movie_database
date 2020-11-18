@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img {
+        section img {
             border: 3px solid red;
         }
 
@@ -91,7 +91,7 @@ session_start();
                 echo "<b>Director : <a href='director-details.php?id=$db_record[director_id]'>$db_record[name]</a></b></p><br>";
                 echo "</div>";
                 echo "<div class='details'>";
-                echo "<h2><a href=''>  $db_record[title]</a></h2><br>";
+                echo "<h2>$db_record[title]</h2><br>";
                 echo "<p>$db_record[synopsis]</p>";
                 echo "<b>Categories : </b>";
                 echo "<ul>";

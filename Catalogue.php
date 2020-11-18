@@ -1,7 +1,19 @@
 <style>
     #card {
-        margin-top: 10px;
-        margin-left: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #card img {
+            border: 3px solid red;
+        }
+    .picture {
+            padding: 30px;
+    }
+    .details {
+        padding: 30px;
+    }
+    form{
+        padding: 30px;
     }
 </style>
 
