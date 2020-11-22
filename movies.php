@@ -2,7 +2,7 @@
 require_once 'database.php';
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 if ($conn) {
-    $querry = "SELECT * FROM movies ORDER BY title ASC";
+    $querry = "SELECT * FROM movies ORDER BY title ASC LIMIT 5";
     $result = mysqli_query($conn, $querry);
     $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
     foreach ($movies as $movie) : ?>
@@ -14,10 +14,10 @@ if ($conn) {
             </section>
             <section class="details">
                 <p><b>Year of Release: </b><?= $movie['release_year'] ?></p><br>
-                <p><b>Synopsis : </b><?= $movie['synopsis'] ?></p><br>
+                <p id="synopsis"><b>Synopsis : </b><?= $movie['synopsis'] ?></p><br>
                 <a href="#">Edit film</a><br>
             </section>
-            <hr>
+
         </div>
 
 

@@ -63,8 +63,53 @@ if ($_SESSION['Status'] == 0) {
     <title>Document</title>
     <style>
         #synopsis {
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 200px;
+
+        }
+
+        body {
+            background-size: cover;
+            background-image: linear-gradient(to top, rgba(200, 200, 200, 0.839), rgba(200, 200, 200, 0.839)), url('images/background.jpg');
+        }
+
+        section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        label {
+
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        section input,
+        #directors {
+            width: 500px;
+            height: 50px;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #submitBTn1 {
+            width: 150px;
+
+            font-size: 30px;
+            border-radius: 20px;
+            margin-top: 20px;
+            transition-duration: 0.4s;
+        }
+
+        #submitBTn1:hover {
+            background-color: green;
+            color: white;
+        }
+
+        p {
+            color: red;
+            font-size: 20px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -77,30 +122,30 @@ if ($_SESSION['Status'] == 0) {
         require_once 'menu.php'
         ?>
     </header>
-    <form action="" method="POST">
-        <label for="name">Name of the movie</label><br>
-        <input type="text" name="title" id="title" value="<?php echo $title ?>"> <br>
-        <?php if (isset($errors['title'])) echo $errors['title']; ?><br>
-        <label for="releasedYear">Released Year</label><br>
-        <input type="number" name="releasedYear" id="releasedYear" value="<?php echo $releasedYear ?>"><br>
-        <?php if (isset($errors['releasedYear'])) echo $errors['releasedYear']; ?><br>
-        <label for="synopsis">Please write the synopsis of the movie (Max 250 characters)</label><br>
-        <?php if (isset($errors['synopsis'])) echo $errors['synopsis']; ?><br>
-        <input type="text" name="synopsis" id="synopsis" value="<?php echo $synopsis ?>"><br><br>
-        <?php if (isset($errors['synopsis'])) echo $errors['synopsis']; ?><br>
-        <label for="poster">Enter the name of your file (add .jpg at the end of the name)</label><br>
-        <input type="text" name="poster" id="poster" value="<?php echo $poster ?>"><br><br>
-        <?php if (isset($errors['poster'])) echo $errors['poster']; ?><br>
-        <!-- <select name="categories" id="categories">
+    <section>
+        <form action="" method="POST">
+            <label for="name">Name of the movie</label><br>
+            <input type="text" name="title" id="title" value="<?php echo $title ?>"> <br>
+            <p> <?php if (isset($errors['title'])) echo $errors['title']; ?></p><br>
+            <label for="releasedYear">Released Year</label><br>
+            <input type="number" name="releasedYear" id="releasedYear" value="<?php echo $releasedYear ?>"><br>
+            <p> <?php if (isset($errors['releasedYear'])) echo $errors['releasedYear']; ?></p><br>
+            <label for="synopsis">Please write the synopsis of the movie (Max 250 characters)</label><br>
+            <textarea name="synopsis" id="synopsis" value="<?php echo $synopsis ?>"></textarea><br><br>
+            <p><?php if (isset($errors['synopsis'])) echo $errors['synopsis']; ?></p><br>
+            <label for="poster">Enter the name of your file (add .jpg at the end of the name)</label><br>
+            <input type="text" name="poster" id="poster" value="<?php echo $poster ?>"><br><br>
+            <p><?php if (isset($errors['poster'])) echo $errors['poster']; ?></p><br>
+            <!-- <select name="categories" id="categories">
             <option name="all" id="all" value="0">Select a category</option>
         </select><br> -->
-        <select name="directors" id="directors">
-            <option name="all" id="all" name="dir">Select a director</option>
-        </select><br>
+            <select name="directors" id="directors">
+                <option name="all" id="all" name="dir">Select a director</option>
+            </select><br>
 
-        <input type="submit" name="submit" id="submit">
-    </form>
-
+            <input type="submit" name="submit" id="submitBTn1">
+        </form>
+    </section>
     <script>
         $(function() {
             $.ajax({

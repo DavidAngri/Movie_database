@@ -7,7 +7,7 @@ if ($_SESSION['Status'] == 0) {
     $category = "";
     $directors = "";
 
-    if (isset($_POST['submitBtn'])) {
+    if (isset($_POST['submitBtn1'])) {
         $category = htmlspecialchars(trim($_POST['category']));
         if (empty($category)) {
             $errors['category'] = 'Please enter on category';
@@ -72,34 +72,85 @@ if ($_SESSION['Status'] == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-size: cover;
+            background-image: linear-gradient(to top, rgba(200, 200, 200, 0.839), rgba(200, 200, 200, 0.839)), url('images/background.jpg');
+        }
 
+        #addCat,
+        #addDir {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        #addCat input,
+        #addDir input {
+            margin-top: 10px;
+        }
+
+        #addCat label,
+        #addDir label {
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #category,
+        #directorname,
+        #poster,
+        #nationalities {
+
+            width: 500px;
+            height: 50px;
+            font-size: 30px;
+        }
+
+        #submitBtn1,
+        #submitBtn2 {
+            width: 150px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 30px;
+            border-radius: 20px;
+
+
+        }
+
+        p {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <header>
     <?php require_once 'menu.php' ?>
 </header>
 
 <body>
-    <form action="" method="POST">
-        <label for="category">Please type the name of a category : </label><br>
-        <input type="text" name="category" id="category" value="<?php echo $category  ?>">
-        <?php if (isset($errors['category'])) echo $errors['category']; ?><br>
-        <input type="submit" name="submitBtn" id="submitBtn">
-    </form>
-    <hr>
-    <form action="" method="POST">
-        <label for="category">Please type the name of a director: </label><br>
-        <input type="text" name="directorname" id="directorname" value="<?php echo $directors  ?>"><br>
-        <?php if (isset($errors['director'])) echo $errors['director']; ?><br>
-        <select name="nationalities" id="nationalities">
-            <option name="all" id="all" value="0">Select a nationality</option>
-        </select><br>
-        <label for="picture">Please enter a poster name</label><br>
-        <input type="text" name="poster" id="poster"><br>
-        <?php if (isset($errors['director'])) echo $errors['director']; ?><br>
-        <input type="submit" name="submitBtn2" id="submitBtn2">
-    </form>
-    <hr>
+    <div id="addCat">
+        <form action="" method="POST">
+            <label for="category">Please type the name of a category : </label><br>
+            <input type="text" name="category" id="category" value="<?php echo $category  ?>"><br>
+            <p><?php if (isset($errors['category'])) echo $errors['category']; ?></p><br>
+            <input type="submit" name="submitBtn1" id="submitBtn1">
+        </form>
+    </div>
 
+    <div id="addDir">
+        <form action="" method="POST">
+            <label for="category">Please type the name of a director: </label><br>
+            <input type="text" name="directorname" id="directorname" value="<?php echo $directors  ?>"><br>
+            <p><?php if (isset($errors['director'])) echo $errors['director']; ?></p> <br>
+            <select name="nationalities" id="nationalities">
+                <option name="all" id="all" value="0">Select a nationality</option>
+            </select><br>
+            <label for="picture">Please enter a poster name :</label><br>
+            <input type="text" name="poster" id="poster"><br>
+            <p><?php if (isset($errors['director'])) echo $errors['director']; ?></p><br>
+            <input type="submit" name="submitBtn2" id="submitBtn2">
+        </form>
+
+    </div>
 
     <script>
         $(function() {

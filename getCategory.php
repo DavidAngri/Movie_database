@@ -4,8 +4,7 @@ require_once 'database.php';
 
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
-if (!empty($_POST)) 
-{
+if (!empty($_POST)) {
     $queryCat = "SELECT c.name, c.category_id, COUNT(c.name) movieCount
                     FROM movies m
                     JOIN movie_category mc ON m.movie_id = mc.movie_id

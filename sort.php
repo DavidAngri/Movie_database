@@ -4,10 +4,10 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 if (isset($_POST['sortasc'])) {
 
     $query = "SELECT*
-FROM movies ORDER BY release_year ASC ";
+FROM movies ORDER BY release_year ASC LIMIT 5";
 } elseif (isset($_POST['sortdes'])) {
     $query = "SELECT*
-    FROM movies ORDER BY release_year DESC ";
+    FROM movies ORDER BY release_year DESC LIMIT 5 ";
 }
 
 $result = mysqli_query($conn, $query);
@@ -23,11 +23,11 @@ foreach ($movies as $movie) : ?>
             <p><b>Year of Release: </b><?= $movie['release_year'] ?></p><br>
             <p><b>Synopsis : </b><?= $movie['synopsis'] ?></p><br>
             <a href="#">Edit film</a><br>
-        </section>            
-        <p>Add to my play list<button><i class="fas fa-bookmark"></i></button></p>
+        </section>
 
 
-        <hr>
+
+
     </div>
 
 
