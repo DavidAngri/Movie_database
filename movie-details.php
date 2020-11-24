@@ -93,19 +93,14 @@ session_start();
                 echo "<div class='details'>";
                 echo "<h2>$db_record[title]</h2><br>";
                 echo "<p>$db_record[synopsis]</p>";
-                echo "<b>Categories : </b>";
-                echo "<ul>";
+                echo "<p><b>Categories : </b></p>";
                 while ($db_records2 = mysqli_fetch_assoc($results2)) {
                     echo "<li> $db_records2[name] </li>";
                 }
-                echo "</ul>";
                 echo "<b>Actor and Actress : </b>";
-                echo "<ul>";
                 while ($db_records1 = mysqli_fetch_assoc($results1)) {
                     echo "<li> $db_records1[name] </li>";
                 }
-                echo "</ul>";
-
                 echo "<input id='submit' type='submit' value='Add to playlist'>";
                 echo "</div>";
                 echo "</section>";

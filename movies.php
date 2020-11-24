@@ -10,7 +10,7 @@ if ($conn) {
             <section class="picture">
                 <img src="images/poster/<?= $movie['poster'] ?>" alt=""><br>
                 <p><b>Movie id : </b><?= $movie['movie_id'] ?></p><br>
-                <p><b>Movie Title : </b><a href="movie-details.php?id=" $movie[movie_id]?><?= $movie['title'] ?></a></p><br>
+                <p><b>Movie Title : </b><a href="movie-details.php?id=<?= $movie['movie_id'] ?>"><?= $movie['title'] ?></a></p><br>
             </section>
             <section class="details">
                 <p><b>Year of Release: </b><?= $movie['release_year'] ?></p><br>
